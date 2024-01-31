@@ -1,0 +1,23 @@
+<body style="background-color: black;">
+    <img src="https://www.freeiconspng.com/thumbs/clock-png/clock-png-17.png" alt="" id="img"> 
+    <div class="login-form">
+        <form>
+            <h2 class="text-center">iTIME MENS</h2>
+            <h2 class="text-center">Log in</h2>       
+            <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" class="form-control" name="Username" placeholder="Enter Username" required="required" [(ngModel)]="uname">
+            </div><br>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter Password" required="required" [(ngModel)]="pwd">
+            </div><br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" (click)="Logincheck()">Log in</button>
+            </div><br>
+            <div class="clearfix">
+                <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+            </div>        
+        </form>
+    </div>    
+</body>

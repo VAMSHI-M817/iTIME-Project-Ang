@@ -1,0 +1,42 @@
+<body>
+    <div class="container-fluid" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >
+        <div class="row">   
+            <div class="col-md-3" *ngFor="let p of productsArray">
+                <div class="card" style="border-color: rgb(137, 126, 126);top: 20px;;">
+                    <div class="card-header">
+                        <img [src]="p.productImage" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h5>{{p.productName}}</h5>
+                        <p>Manufactured By: {{p.productCompany}}</p>
+                        <p>Features:{{p.productFeatures}}</p>
+                        <label for="" class="badge bg-success text-white">
+                            {{p.productPrice|currency:'INR'}}
+                        </label>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-warning" (click)="addtocart(p)" style="padding: 5px;">Add to cart</button>&nbsp;
+                        <button class="btn btn-primary"style="padding: 5px;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <section>
+        <footer>
+            <div class="bg-secondary text-white row">
+                <div class="d-flex justify-content-start  col-md-5">
+                    <p id="fontstyle">&nbsp;&nbsp;&nbsp;©2019 COPYRIGHT RESERVED TO iITME WATCHES PVT LMTD</p>
+                </div>
+                <div class="col-md-3"></div>
+                <div class=" justify-content-end col-md-4">
+        
+                    <p id="fontstyle">WEBSITE POWERED BY THE DR REDDY'S FOUNDATION</p>
+                    <p id="fontstyle">
+                        DESIGNED BY VAMSHI
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>

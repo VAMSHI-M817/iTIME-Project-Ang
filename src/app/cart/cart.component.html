@@ -1,0 +1,58 @@
+<body>
+    <table>
+        <tr>
+            <th>Product Images</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Remove Item</th>
+        </tr>
+        <tr *ngFor="let p of cartarr">
+            <td><img [src]="p.productImage" alt="" height="150" width="150"></td>
+            <td><label for="">{{p.productName}}</label></td>
+            <td><label for="">{{p.productPrice}}</label></td>
+            <td><button class="btn btn-danger" (click)="remove(p)">Remove From Cart</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Total Price</td>
+            <td>{{totalprice}}</td>
+        </tr>
+        <!-- <tr class="d-flex justify-content-end">
+           
+        </tr> -->
+    </table><br>
+    <div class="d-flex justify-content-center">
+        <input type="text" [(ngModel)]="totalprice" disabled>&nbsp;
+        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#mymodal">Continue to Order</button>
+    </div>
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content d-flex justify-content-center">
+                <div class="modal-header ">
+                    <h5 class="modal-title">Order Summary</h5>
+                    <a href="" class="btn-close" data-bs-dismiss="modal"></a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <h3>Enter Delivery Address</h3>
+                        <input type="text" class="form-control" name="Username" placeholder="Enter Name"
+                            required="required">
+                        <br>
+                        <input type="text" class="form-control" name="Address" placeholder="Enter City"
+                            required="required">
+                        <br>
+                        <input type="text" class="form-control" name="Number" placeholder="Enter Mobile Number"
+                            required="required">
+                        <br>
+                        <label for="">Payment</label>
+                        <input type="text" class="form-control" name="price" placeholder="Enter Name"
+                            required="required" [(ngModel)]="totalprice" disabled>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="placeorder()" >Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
